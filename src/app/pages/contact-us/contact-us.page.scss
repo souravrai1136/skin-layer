@@ -1,0 +1,80 @@
+.form-control {
+  border: 1px solid #d9d9d9;
+  background: #ffffff8c;
+  border-radius: 5px;
+  color: #a5a5a5;
+  width: 100%;
+}
+.form-control {
+  outline: none;
+}
+.contact-img {
+  width: 27rem;
+  margin: auto;
+}
+.contact-img-small {
+  width: 10rem;
+  margin: auto;
+  display: none;
+}
+.contact-page {
+  margin: 10px 20px;
+}
+.ion-row {
+  background: #82baeb82;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.form-group {
+  margin: 0px 0px 0px auto;
+}
+.cart-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 12px;
+  --border-radius: 6px;
+  --background: #00539c;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.ion-col {
+  margin: auto;
+}
+.lb-txt {
+  color: #1a507e;
+  font-weight: bold;
+}
+.left-section {
+  margin-right: 20px;
+}
+.page-heading {
+  font-size: 45px;
+  font-weight: bold;
+  color: #00539c;
+  text-align: center;
+}
+.contact-msg {
+  text-align: center;
+  font-size: 28px;
+  color: #6b7b89;
+}
+.contact-msg-txt {
+  text-align: center;
+  max-width: 802px;
+  margin: 10px auto;
+  color: grey;
+}
+
+@media screen and (max-width: 767px) {
+  .contact-img {
+    display: none;
+  }
+  .form-group {
+    margin: 0px auto 0px auto;
+    max-width: 600px;
+  }
+  .contact-img-small {
+    display: block;
+  }
+}

@@ -1,0 +1,136 @@
+<app-header
+  (onComponentDataFetch)="DataFetchEv($event)"
+  [isDashboard]="isDashboard"
+  [isTitle]="isTitle"
+>
+</app-header>
+
+<ion-content>
+  <div class="payment-page">
+    <ion-row>
+      <ion-col size-sm="6" size-md="8" size-lg="8" size-xl="8">
+        <div class="left-side">
+          <div class="delivery-address">
+            <h2 class="delivery-heading">Delivery Address</h2>
+            <div class="add-address" *ngIf="new_address">
+              <form class="form-grp">
+                <div class="inp-grp">
+                  <p class="field-txt">Address Line 1</p>
+                  <ion-input
+                    class="form-field"
+                    placeholder="address line 1"
+                  ></ion-input>
+                </div>
+                <div class="inp-grp">
+                  <p class="field-txt">Address Line 2</p>
+                  <ion-input
+                    class="form-field"
+                    placeholder="address line 2"
+                  ></ion-input>
+                </div>
+                <div class="inp-grp">
+                  <p class="field-txt">City</p>
+                  <ion-input class="form-field" placeholder="city"></ion-input>
+                </div>
+                <div class="inp-grp">
+                  <p class="field-txt">Pin Code</p>
+                  <ion-input
+                    class="form-field"
+                    placeholder="pin code"
+                  ></ion-input>
+                </div>
+                <div class="inp-grp">
+                  <p class="field-txt">State</p>
+                  <ion-input class="form-field" placeholder="state"></ion-input>
+                </div>
+              </form>
+              <div class="btn-grup">
+                <ion-button class="add-address-btn">Add</ion-button>
+              </div>
+              <!-- <p class="address-txt">
+                Rai saab ki video Kot Mangal Singh Street no 6, house no 8982
+                LUDHIANA, PUNJAB 141003
+              </p> -->
+            </div>
+            <p (click)="add_address()" class="add-btn">
+              <ion-icon class="add-icon" name="add-outline"></ion-icon> Add
+              Address
+            </p>
+          </div>
+
+          <div class="delivery-address">
+            <h2 class="delivery-heading">Payment Method</h2>
+            <google-pay-button
+              environment="TEST"
+              buttonType="buy"
+              buttonColor="white"
+              [paymentRequest]="{
+                apiVersion: 2,
+                apiVersionMinor: 0,
+                allowedPaymentMethods: [
+                  {
+                    type: 'CARD',
+                    parameters: {
+                      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                      allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+                    },
+                    tokenizationSpecification: {
+                      type: 'PAYMENT_GATEWAY',
+                      parameters: {
+                        gateway: 'example',
+                        gatewayMerchantId: 'exampleGatewayMerchantId'
+                      }
+                    }
+                  }
+                ],
+                merchantInfo: {
+                  merchantId: '12345678901234567890',
+                  merchantName: 'Demo Merchant'
+                },
+                transactionInfo: {
+                  totalPriceStatus: 'FINAL',
+                  totalPriceLabel: 'Total',
+                  totalPrice: '100.00',
+                  currencyCode: 'USD',
+                  countryCode: 'US'
+                }
+              }"
+              (loadpaymentdata)="onLoadPaymentData($event)"
+            ></google-pay-button>
+          </div>
+
+          <div class="delivery-address">
+            <h2 class="delivery-heading">Review items and delivery</h2>
+            <p class="address-txt">
+              Rai saab ki video Kot Mangal Singh Street no 6, house no 8982
+              LUDHIANA, PUNJAB 141003
+            </p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size-sm="6" size-md="4" size-lg="4" size-xl="4">
+        <div class="right-side">
+          <div class="order-summary-contain">
+            <h2 class="oder-sum-heading">Order Summary</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="td-heading">item:</td>
+                  <td class="td-amount">3432</td>
+                </tr>
+                <tr>
+                  <td class="td-heading">Delivery:</td>
+                  <td class="td-amount">3432</td>
+                </tr>
+                <tr>
+                  <td class="td-heading">Total:</td>
+                  <td class="td-amount">3432</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

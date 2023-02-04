@@ -1,0 +1,101 @@
+.custom-theme-page {
+  margin: 30px 20px 0px 20px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+button.brochure-btn {
+  padding: 15px;
+  background: #e9f5ff;
+  border: 1px dashed #00539c;
+  border-radius: 10px;
+  width: 70%;
+}
+img.file-icon {
+  margin-bottom: -3px;
+}
+.file-upload-btn {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.uploaded-file {
+  width: 70%;
+  height: 15rem;
+  background: #cfcfcf;
+  border-radius: 7px;
+  margin: 0px auto 20px auto;
+}
+.upload-content {
+  text-align: center;
+}
+.in-cs {
+  border: 1px solid #8080807a;
+  margin-top: -7px;
+  font-family: "POPPINS";
+  border-radius: -104px;
+  height: 38px;
+}
+.in-cs:focus-visible {
+  outline: none;
+}
+
+.ng-select.custom .ng-select-container {
+  height: 36px;
+  border-radius: 5px !important;
+  border: 1px solid #ccc;
+  min-height: 39px !important;
+  align-items: center;
+  margin-top: -7px !important;
+  border-color: #d9d9d9 !important;
+}
+
+.cart-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 12px;
+  --border-radius: 6px;
+  --background: #00539c;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.select-device-content {
+  margin-right: 35px;
+}
+.choose-device {
+  font-weight: bold;
+  color: #00539c;
+  margin-top: 0px;
+}
+.mt-10 {
+  margin-top: 12px;
+}
+.item-txt {
+  width: 100%;
+}
+.price-amout {
+  display: flex;
+}
+.price-box {
+  background: white;
+  border-radius: 5px;
+  padding: 8px 10px 3px 10px;
+  margin-top: 15px;
+}
+.border {
+  border-top: 1px solid #d5d5d5;
+  padding-top: 7px;
+}
+.mb-8 {
+  margin-bottom: 8px;
+}
+.border {
+  font-weight: bold;
+}

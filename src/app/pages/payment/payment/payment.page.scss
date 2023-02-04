@@ -1,0 +1,74 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.left-side {
+  float: left;
+}
+.right-side {
+  float: right;
+  border: 1px solid #cfcfcf;
+  padding: 15px;
+  border-radius: 8px;
+  width: 90%;
+  background: white;
+}
+.delivery-heading {
+  font-weight: bold;
+  color: #464646;
+  margin-bottom: 6px;
+}
+.delivery-address {
+  border-bottom: 1.5px solid #b9b9b9;
+  padding: 20px 0px 20px 0px;
+}
+
+.payment-page {
+  margin: 20px 20px 0px 20px;
+}
+.td-amount {
+  position: absolute;
+  right: 20px;
+}
+.oder-sum-heading {
+  color: #5e5c5c;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.td-heading,
+.td-amount {
+  padding-bottom: 10px !important;
+}
+
+.form-field {
+  border: 1px solid #b7b7b7;
+  border-radius: 6px;
+  color: #a7a5a5;
+}
+.add-btn {
+  /* border: 1px solid #00539c; */
+  color: #00539c;
+}
+
+.inp-grp {
+  margin-bottom: 12px;
+}
+
+.add-address {
+  border: 1px solid #bdbdbd;
+  padding: 20px;
+  border-radius: 9px;
+  margin-bottom: 25px;
+}
+
+.add-icon {
+  margin-bottom: -2px;
+}
+
+.add-address-btn {
+  width: 100px;
+}
+.btn-grup {
+  text-align: center;
+}

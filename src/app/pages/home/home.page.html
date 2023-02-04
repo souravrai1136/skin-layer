@@ -1,0 +1,73 @@
+<app-header
+  (onComponentDataFetch)="DataFetchEv($event)"
+>
+</app-header>
+
+<ion-content>
+  <div class="page-contain" *ngIf="list_view">
+    <div class="bg-img-contain">
+      <ion-slides pager="true" loop="true" [options]="slideOpts">
+        <ion-slide *ngFor="let item of bg_img">
+          <div class="card">
+            <div class="content">
+              <h1 class="bg-heading">{{item.heading_txt}}</h1>
+              <p class="card-para-txt">{{item.label_txt}}</p>
+              <ion-button class="shop-btn">{{item.btn}}</ion-button>
+            </div>
+            <img [src]="item.img" class="bg-img" />
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="product-content">
+      <h1 class="laptop-heading">New Laptop Skin</h1>
+      <p class="see-more-txt" (click)="see_more('1')">See More</p>
+    </div>
+    <div class="laptop-section">
+      <div
+        class="slide-card"
+        *ngFor="let item of laptop_data"
+        (click)="view_details(item)"
+      >
+        <img [src]="item.img" class="laptop-img" />
+        <div class="laptop-card-content">
+          <p class="theme-name">{{item.theme_name}}</p>
+          <p class="theme-cost">{{item.cost}}</p>
+          <p class="theme-discount">{{item.discount_cost}}</p>
+          <p class="theme-label">{{item.label}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-content">
+      <h1 class="laptop-heading">New Moblie Skin</h1>
+      <p class="see-more-txt" (click)="see_more('2')">See More</p>
+    </div>
+    <div class="laptop-section">
+      <div
+        class="slide-card"
+        *ngFor="let item of moblie_data"
+        (click)="view_details(item)"
+      >
+        <img [src]="item.img" class="laptop-img" />
+        <div class="laptop-card-content">
+          <p class="theme-name">{{item.theme_name}}</p>
+          <p class="theme-cost">
+            <span class="currency-sysblam">$</span> {{item.cost}}
+          </p>
+          <p class="theme-discount">{{item.discount_cost}}</p>
+          <p class="theme-label">{{item.label}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-content">
+      <img src="../../../assets/img/DC.jpg" class="bg-img" />
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <app-product-view-details
+    [data_]="selectedData"
+    *ngIf="details_view"
+  ></app-product-view-details>
+</ion-content>

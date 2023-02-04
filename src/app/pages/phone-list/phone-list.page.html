@@ -1,0 +1,36 @@
+<app-header
+  (onComponentDataFetch)="DataFetchEv($event)"
+  [isDashboard]="isDashboard"
+  [isTitle]="isTitle"
+>
+</app-header>
+
+<ion-content>
+  <div class="laptop-page" *ngIf="list_view">
+    <ion-row>
+      <ion-col
+        size="6"
+        size-xs="6"
+        size-sm="4"
+        size-md="4"
+        size-lg="3"
+        *ngFor="let item of moblie_data"
+      >
+        <div class="laptop-card" (click)="phone_view(item)">
+          <img class="laptop-img" [src]="item.img" />
+          <div class="card-contentg">
+            <p class="title">{{item.theme_name}}</p>
+            <p class="title">{{item.cost}}</p>
+            <p class="title">{{item.discount_cost}}</p>
+            <p class="title">{{item.label}</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <app-product-view-details
+    [data_]="selectedData"
+    *ngIf="details_view"
+  ></app-product-view-details>
+</ion-content>

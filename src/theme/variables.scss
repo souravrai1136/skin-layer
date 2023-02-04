@@ -1,6 +1,33 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+@font-face {
+  font-family: Nunito-black;
+  src: url("../assets/fonts/Nunito/static/Nunito-Black.ttf");
+}
+@font-face {
+  font-family: Nunito-b;
+  src: url("../assets/fonts/Nunito/static/Nunito-Bold.ttf");
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("../assets/fonts/Nunito/static/Nunito-Light.ttf");
+}
+
+@font-face {
+  font-family: Nunito-semiblod;
+  src: url("../assets/fonts/Nunito/static/Nunito-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: Nunito-Medium;
+  src: url("../assets/fonts/Nunito/static/Nunito-Medium.ttf");
+}
+* {
+  font-family: "Nunito";
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/

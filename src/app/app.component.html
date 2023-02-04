@@ -1,3 +1,40 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content" #ionSplitPane>
+    <ion-menu
+      class="cus-menu-sty"
+      style="--background: #29292a !important"
+      contentId="main-content"
+      type="overlay"
+    >
+      <ion-content class="ct-side-menu">
+        <img src="../assets/menu-icon/logo.png" class="company-logo" />
+        <div class="menu-user-card">
+          <img src="../assets/menu-icon/user-logo.png" class="user-logo-img" />
+          <div class="user-info">
+            <h2 class="main-title-sd">Sourav</h2>
+            <p class="email-txt">Sourav@gmail.com</p>
+          </div>
+          <ion-icon class="setting-icon" name="settings-outline"></ion-icon>
+        </div>
+
+        <ion-menu-toggle
+          auto-hide="false"
+          *ngFor="let p of appPages; let i = index"
+        >
+          <ion-item
+            class="item-sdmenu"
+            routerDirection="root"
+            [routerLink]="[p.url]"
+            lines="none"
+            detail="false"
+            routerLinkActive="selected"
+          >
+            <img [src]="p.img" class="menu-icons" />
+            <ion-label class="sd-lbl-txt">{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

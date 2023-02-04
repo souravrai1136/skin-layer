@@ -1,0 +1,73 @@
+<app-header (onComponentDataFetch)="DataFetchEv($event)"> </app-header>
+
+<ion-content>
+  <div class="contact-page">
+    <h1 class="page-heading">Contact us</h1>
+    <p class="contact-msg">Have You Question?</p>
+    <p class="contact-msg-txt">
+      Thank you for your interest in our services. Please fill out the form
+      below or e-mail us at saurbhrai.web@gmail.com and we will get back to you
+      promptly regarding your request.
+    </p>
+    <ion-row class="ion-row">
+      <ion-col
+        class="ion-col"
+        size-xs="12"
+        size-sm="12"
+        size-md="6"
+        size-lg="6"
+        size-xl="6"
+      >
+        <div class="left-section">
+          <img
+            src="../../../assets/contact-us-vector.jpg"
+            class="contact-img"
+            alt=""
+          />
+          <img
+            src="../../../assets/contact-us-vector.png"
+            class="contact-img-small"
+            alt=""
+          />
+        </div>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
+        <div class="right-section">
+          <form [formGroup]="form_detail" class="form-group">
+            <div class="inp-bx">
+              <p class="lb-txt">Your Full Name</p>
+              <ion-input
+                class="form-control"
+                formControlName="full_name"
+              ></ion-input>
+            </div>
+            <div class="inp-bx">
+              <p class="lb-txt">Your Email</p>
+              <ion-input
+                class="form-control"
+                formControlName="email"
+              ></ion-input>
+            </div>
+            <div class="inp-bx">
+              <p class="lb-txt">Your Phone Number</p>
+              <ion-input
+                class="form-control"
+                formControlName="phone_no"
+              ></ion-input>
+            </div>
+            <div class="inp-bx">
+              <p class="lb-txt">Your Comment</p>
+              <textarea
+                class="form-control"
+                formControlName="comment"
+                rows="5"
+              ></textarea>
+            </div>
+            <ion-button class="cart-btn">Submit</ion-button>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

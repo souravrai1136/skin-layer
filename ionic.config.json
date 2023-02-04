@@ -1,5 +1,7 @@
 {
   "name": "skin-layer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

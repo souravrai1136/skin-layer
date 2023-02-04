@@ -1,0 +1,81 @@
+/* footer style start here --------- */
+
+.footer {
+    background: #e4f7ff;
+    padding: 60px 40px 20px 40px;
+  }
+  h1.footer-heading {
+    font-family: "Nunito-b";
+    color: #00344a;
+  }
+  
+  p.footer-desc {
+    color: #00344a;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .logo-footer-col {
+    margin: auto 0px;
+  }
+  
+  ul.footer-menu-ul {
+    list-style: none;
+    /* display: flex; */
+    padding: 0px;
+    margin-top: 35px;
+  }
+  li.footer-menu-li {
+    margin-right: 40px;
+  }
+  a.footer-menu-a {
+    color: #00344a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .footer-info {
+    border-bottom: 1px solid #00344a;
+    padding-bottom: 40px;
+  }
+  
+  img.social-media-img {
+    border: 1px solid #00344a;
+    border-radius: 58%;
+    padding: 10px 8px;
+    margin: 0px 5px;
+  }
+  .footer-social {
+    margin-top: 25px;
+  }
+  
+  p.term-txt {
+    margin: auto 10px auto 10px;
+    font-weight: bold;
+    color: #00344a;
+    font-size: 18px;
+  }
+  /* .img-group {
+    border: 1px solid #00344a;
+    border-radius: 60px;
+    width: 69px;
+    height: 69px;
+    margin: 0px 5px;
+  } */
+  .social {
+    justify-content: right;
+  }
+  .term {
+    justify-content: left;
+  }
+  .d-flex {
+    display: flex !important;
+    margin-bottom: 20px;
+  }
+  .copyright {
+    color: #00344a;
+    text-align: center;
+  }
+  p.copyright-txt {
+    font-weight: bold;
+  }
+  /* footer style end here --------- */
