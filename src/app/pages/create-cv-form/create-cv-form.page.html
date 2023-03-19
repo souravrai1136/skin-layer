@@ -1,0 +1,1247 @@
+<ion-header>
+  <app-header> </app-header>
+</ion-header>
+<ion-content>
+  <div class="" id="rightSection__">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="4" size-lx="4">
+        <ion-button class="save-btn" (click)=" DownloadCV()">
+          Download
+        </ion-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="4" size-lx="4">
+        <ion-button class="save-btn" (click)="DraftCV()"> Draft </ion-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="4" size-lx="4">
+        <ion-button class="save-btn" (click)="UpdateDraftCV()">
+          Update Draft
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="create-cv-page">
+    <div class="form-container left-section">
+      <!--  persoanl-details start here  -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Personal Details</p>
+          <ion-icon
+            *ngIf="!hide_personal"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('1')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_personal"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('1')"
+          ></ion-icon>
+        </div>
+        <!-- <hr class="border-line" /> -->
+        <div class="persoanl-details" *ngIf="!hide_personal">
+          <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Wanted Job Title</p>
+                  <ion-input
+                    class="form-control"
+                    placeholder="Job title"
+                    [(ngModel)]="want_job_title"
+                    (ngModelChange)="selectData($event,'1')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+              class="img-upload-col"
+            >
+              <div class="upload-btn-wrapper">
+                <button class="brochure-btn">
+                  <ion-icon
+                    class="file-icon"
+                    name="cloud-upload-outline"
+                  ></ion-icon>
+                  Add User Image
+                </button>
+                <input
+                  class="file-upload-btn"
+                  name="files"
+                  type="file"
+                  id="bannerImg"
+                  (change)="SelectLogo($event)"
+                />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Frist Name</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="frist_name"
+                    (ngModelChange)="selectData($event,'2')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Last Name</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="last_name"
+                    (ngModelChange)="selectData($event,'3')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Email</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="email"
+                    (ngModelChange)="selectData($event,'4')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Phone Number</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="phone_number"
+                    (ngModelChange)="selectData($event,'5')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <!-- <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Address Line 1</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="address_1"
+                    (ngModelChange)="selectData($event,'6')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Address Line 2</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="address_2"
+                    (ngModelChange)="selectData($event,'7')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row> -->
+          <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">State</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="state"
+                    (ngModelChange)="selectData($event,'8')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">City</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="city"
+                    (ngModelChange)="selectData($event,'9')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Country</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="country"
+                    (ngModelChange)="selectData($event,'10')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col>
+            <!-- <ion-col
+              size-xs="12"
+              size-sm="6"
+              size-md="6"
+              size-lg="6"
+              size-lx="6"
+            >
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Postal Code</p>
+                  <ion-input
+                    class="form-control"
+                    [(ngModel)]="postal_code"
+                    (ngModelChange)="selectData($event,'11')"
+                  ></ion-input>
+                </div>
+              </div>
+            </ion-col> -->
+          </ion-row>
+        </div>
+      </div>
+      <!-- persoanl-details end here -->
+
+      <!--  Summary start here  -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Professional Summary</p>
+          <ion-icon
+            *ngIf="!hide_summary"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('2')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_summary"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('2')"
+          ></ion-icon>
+        </div>
+        <div class="persoanl-details" *ngIf="!hide_summary">
+          <ion-row>
+            <ion-col size="12">
+              <div class="input-box">
+                <div class="flex-heading">
+                  <p class="lb-txt">Professional Summary</p>
+                  <ion-textarea
+                    class="form-control-textarea"
+                    rows="4"
+                    cols="50"
+                    [(ngModel)]="professional_sum"
+                    (ngModelChange)="selectData($event,'12')"
+                  ></ion-textarea>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+      <!-- Summary end here  -->
+
+      <!-- Education start here  -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Education Details</p>
+          <ion-icon
+            *ngIf="!hide_education"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('4')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_education"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('4')"
+          ></ion-icon>
+        </div>
+        <div class="persoanl-details" *ngIf="!hide_education">
+          <div class="data-card-container">
+            <ion-row>
+              <ion-col
+                size-xs="12"
+                size-sm="6"
+                size-md="6"
+                size-lg="6"
+                size-lx="6"
+                *ngFor="let item of educationData let i = index"
+              >
+                <div class="data-card">
+                  <p class="title-name">{{item.school_collage }}</p>
+                  <p class="title-name">{{item.education_degree}}</p>
+                  <p class="title-name">{{item.education_startEnd_date}}</p>
+                  <p class="title-name">{{item.education_city}}</p>
+                  <p class="title-name">{{item.education_description}}</p>
+                  <div class="two-btn">
+                    <ion-icon
+                      class="save-btn-1"
+                      name="pencil-sharp"
+                      (click)="edit_data(item,'1')"
+                    ></ion-icon>
+                    <ion-icon
+                      class="delete-btn"
+                      name="trash-outline"
+                      (click)="onRemove(item,'1')"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <div *ngFor="let item of educationData let i = index">
+              <div *ngIf="item.item_edit">
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">School/Collage</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.school_collage"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Degree</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.education_degree"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Start/End Date</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.education_startEnd_date"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">City</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.education_city"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col
+                    size-xs="9"
+                    size-sm="9"
+                    size-md="9"
+                    size-lg="9"
+                    size-lx="9"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Description</p>
+                        <ion-textarea
+                          class="form-control-textarea"
+                          rows="4"
+                          cols="50"
+                          [(ngModel)]="item.education_description"
+                        ></ion-textarea>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="3"
+                    size-sm="3"
+                    size-md="3"
+                    size-lg="3"
+                    size-lx="3"
+                  >
+                    <ion-button (click)="update_exiting_data(item,'1')"
+                      >Update</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+          <div class="hide_edu" *ngIf="hide_edu">
+            <div *ngFor="let item of education_details let i = index">
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">School/Collage</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.school_collage"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Degree</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.education_degree"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Start/End Date</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.education_startEnd_date"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">City</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.education_city"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col
+                  size-xs="9"
+                  size-sm="9"
+                  size-md="9"
+                  size-lg="9"
+                  size-lx="9"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Description</p>
+                      <ion-textarea
+                        class="form-control-textarea"
+                        rows="4"
+                        cols="50"
+                        [(ngModel)]="item.education_description"
+                      ></ion-textarea>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <div class="add-fields">
+            <p class="add-field-txt" (click)="addfields('1')">
+              <ion-icon class="add-icon" name="add-circle-outline"></ion-icon>
+              Add one new Employment
+            </p>
+            <ion-button
+              class="add-btn"
+              *ngIf="hide_edu"
+              (click)="click_add('2')"
+              >Save Data</ion-button
+            >
+          </div>
+        </div>
+      </div>
+      <!--  Education end here  -->
+
+      <!-- employment start here -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Employment Details</p>
+          <ion-icon
+            *ngIf="!hide_employment"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('3')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_employment"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('3')"
+          ></ion-icon>
+        </div>
+        <div class="persoanl-details" *ngIf="!hide_employment">
+          <div class="data-card-container">
+            <ion-row>
+              <ion-col
+                size-xs="12"
+                size-sm="6"
+                size-md="6"
+                size-lg="6"
+                size-lx="6"
+                *ngFor="let item of employementData let i = index"
+              >
+                <div class="data-card">
+                  <p class="title-name">{{item.job_title }}</p>
+                  <p class="title-name">{{item.start_end_date}}</p>
+                  <p class="title-name">{{item.employment_description}}</p>
+                  <p class="title-name">{{item.employer}}</p>
+                  <p class="title-name">{{item.city}}</p>
+                  <div class="two-btn">
+                    <ion-icon
+                      class="save-btn-1"
+                      name="pencil-sharp"
+                      (click)="edit_data(item,'2')"
+                    ></ion-icon>
+                    <ion-icon
+                      class="delete-btn"
+                      name="trash-outline"
+                      (click)="onRemove(item,'2')"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <div *ngFor="let item of employementData let i = index">
+              <div *ngIf="item.item_edit">
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Job Title</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.job_title"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Employer</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.employer"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Start/End Date</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.start_end_date"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">City</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.city"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col
+                    size-xs="9"
+                    size-sm="9"
+                    size-md="9"
+                    size-lg="9"
+                    size-lx="9"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Description</p>
+                        <ion-textarea
+                          class="form-control-textarea"
+                          rows="4"
+                          cols="50"
+                          [(ngModel)]="item.employment_description"
+                        ></ion-textarea>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="3"
+                    size-sm="3"
+                    size-md="3"
+                    size-lg="3"
+                    size-lx="3"
+                  >
+                    <ion-button (click)="update_exiting_data(item,'2')"
+                      >Update</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+
+          <div class="hide_edu" *ngIf="hide_employ">
+            <div *ngFor="let item of employment_details let i = index">
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Job Title</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.job_title"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Employer</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.employer"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Start/End Date</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.start_end_date"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">City</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.city"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col
+                  size-xs="9"
+                  size-sm="9"
+                  size-md="9"
+                  size-lg="9"
+                  size-lx="9"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Description</p>
+                      <ion-textarea
+                        class="form-control-textarea"
+                        rows="4"
+                        cols="50"
+                        [(ngModel)]="item.employment_description"
+                      ></ion-textarea>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+
+          <div class="add-fields">
+            <p class="add-field-txt" (click)="addfields('2')">
+              <ion-icon class="add-icon" name="add-circle-outline"></ion-icon>
+              Add one new Employment
+            </p>
+            <ion-button
+              class="add-btn"
+              *ngIf="hide_employ"
+              (click)="click_add('1')"
+              >Save Data
+            </ion-button>
+          </div>
+        </div>
+      </div>
+      <!--  employment end here  -->
+
+      <!--  Skill start here  -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Skils</p>
+          <ion-icon
+            *ngIf="!hide_skill"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('5')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_skill"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('5')"
+          ></ion-icon>
+        </div>
+        <div class="persoanl-details" *ngIf="!hide_skill">
+          <div class="data-card-container">
+            <ion-row>
+              <ion-col
+                size-xs="12"
+                size-sm="6"
+                size-md="6"
+                size-lg="6"
+                size-lx="6"
+                *ngFor="let item of skillData let i = index"
+              >
+                <div class="data-card">
+                  <p class="title-name">{{item.label }}</p>
+                  <p class="title-name">{{item.rating}}</p>
+                  <div class="two-btn">
+                    <ion-icon
+                      class="save-btn-1"
+                      name="pencil-sharp"
+                      (click)="edit_data(item,'3')"
+                    ></ion-icon>
+                    <ion-icon
+                      class="delete-btn"
+                      name="trash-outline"
+                      (click)="onRemove(item,'3')"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <div *ngFor="let item of skillData let i = index">
+              <div *ngIf="item.item_edit">
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Label</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.label"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Rating</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Job title"
+                          [(ngModel)]="item.rating"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col
+                    size-xs="3"
+                    size-sm="3"
+                    size-md="3"
+                    size-lg="3"
+                    size-lx="3"
+                  >
+                    <ion-button (click)="update_exiting_data(item,'3')"
+                      >Update</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+
+          <div class="hide_edu" *ngIf="hide_skil">
+            <div *ngFor="let item of skill_details let i = index">
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Label</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.label"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Rating</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Job title"
+                        [(ngModel)]="item.rating"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+
+          <div class="add-fields">
+            <p class="add-field-txt" (click)="addfields('3')">
+              <ion-icon class="add-icon" name="add-circle-outline"></ion-icon>
+              Add one new Employment
+            </p>
+            <ion-button
+              class="add-btn"
+              *ngIf="hide_skil"
+              (click)="click_add('3')"
+              >Save Data</ion-button
+            >
+          </div>
+        </div>
+      </div>
+      <!--  Skill end here  -->
+
+      <!--  Language start here  -->
+      <div class="personal-form">
+        <div class="header-heading">
+          <p class="personal-txt">Language</p>
+          <ion-icon
+            *ngIf="!hide_language"
+            class="down-arrow-icon"
+            name="chevron-down-outline"
+            (click)="hide_show('6')"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="hide_language"
+            class="down-arrow-icon"
+            name="chevron-up-outline"
+            (click)="hide_show('6')"
+          ></ion-icon>
+        </div>
+        <div class="persoanl-details" *ngIf="!hide_language">
+          <div class="data-card-container">
+            <ion-row>
+              <ion-col
+                size-xs="12"
+                size-sm="6"
+                size-md="6"
+                size-lg="6"
+                size-lx="6"
+                *ngFor="let item of languageData let i = index"
+              >
+                <div class="data-card">
+                  <p class="title-name">{{item.label }}</p>
+                  <div class="two-btn">
+                    <ion-icon
+                      class="save-btn-1"
+                      name="pencil-sharp"
+                      (click)="edit_data(item,'4')"
+                    ></ion-icon>
+                    <ion-icon
+                      class="delete-btn"
+                      name="trash-outline"
+                      (click)="onRemove(item,'4')"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <div *ngFor="let item of languageData let i = index">
+              <div *ngIf="item.item_edit">
+                <ion-row>
+                  <ion-col
+                    size-xs="12"
+                    size-sm="6"
+                    size-md="6"
+                    size-lg="6"
+                    size-lx="6"
+                  >
+                    <div class="input-box">
+                      <div class="flex-heading">
+                        <p class="lb-txt">Label</p>
+                        <ion-input
+                          class="form-control"
+                          placeholder="Language"
+                          [(ngModel)]="item.label"
+                        ></ion-input>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col
+                    size-xs="3"
+                    size-sm="3"
+                    size-md="3"
+                    size-lg="3"
+                    size-lx="3"
+                  >
+                    <ion-button (click)="update_exiting_data(item,'4')"
+                      >Update</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+
+          <div class="hide_edu" *ngIf="hide_lang">
+            <div *ngFor="let item of language_details let i = index">
+              <ion-row>
+                <ion-col
+                  size-xs="12"
+                  size-sm="6"
+                  size-md="6"
+                  size-lg="6"
+                  size-lx="6"
+                >
+                  <div class="input-box">
+                    <div class="flex-heading">
+                      <p class="lb-txt">Label</p>
+                      <ion-input
+                        class="form-control"
+                        placeholder="Language"
+                        [(ngModel)]="item.label"
+                      ></ion-input>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+
+          <div class="add-fields">
+            <p class="add-field-txt" (click)="addfields('4')">
+              <ion-icon class="add-icon" name="add-circle-outline"></ion-icon>
+              Add one new Employment
+            </p>
+            <ion-button
+              class="add-btn"
+              *ngIf="hide_lang"
+              (click)="click_add('4')"
+              >Save Data</ion-button
+            >
+          </div>
+        </div>
+      </div>
+      <!--  Language end here  -->
+    </div>
+
+    <!-- pdf preview ----------- -->
+    <div class="right-section">
+      <div class="col-md-8" id="htmlData" #htmlData>
+        <div class="pdf-sheet">
+          <div class="pdf-left">
+            <div class="bg-img">
+              <img [src]="logo" alt="" class="user-img" />
+              <div class="personal-info" *ngIf="phone_number">
+                <div class="address-con">
+                  <h2 class="address-heading">Address</h2>
+                  <p class="address-txt">{{state}}, {{city}}, {{country}}</p>
+                </div>
+                <div class="address-con">
+                  <h2 class="address-heading">Contact</h2>
+                  <p class="address-txt">{{phone_number}}</p>
+                  <p class="address-txt">{{email}}</p>
+                </div>
+                <div class="address-con">
+                  <h2 class="address-heading">Professional Summary</h2>
+                  <p class="address-txt">{{professional_sum}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pdf-right">
+            <div class="bg-img-horitonal">
+              <p class="name">{{frist_name}} {{last_name}}</p>
+              <p class="role-label">{{want_job_title}}</p>
+            </div>
+            <div class="education" *ngIf="educationData.length !==0">
+              <h2 class="education-heading">Education</h2>
+              <div class="data-content" *ngFor="let item of educationData">
+                <p class="university">{{item.school_collage}}</p>
+                <p class="university">{{item.education_degree}}</p>
+                <p class="university">{{item.education_startEnd_date}}</p>
+              </div>
+            </div>
+            <div class="education" *ngIf="employementData.length !==0">
+              <h2 class="education-heading">Employment</h2>
+              <div class="data-content" *ngFor="let item of employementData ">
+                <p class="university">{{item.job_title}}</p>
+                <p class="university">{{item.employer}}</p>
+                <p class="university">{{item.start_end_date}}</p>
+              </div>
+            </div>
+            <div class="education" *ngIf="skillData.length !==0">
+              <h2 class="education-heading">Skill</h2>
+              <ul class="data-content">
+                <li class="li-data" *ngFor="let item of skillData ">{{item.label}}</li>
+              </ul>
+            </div>
+            <!-- <div class="education">
+              <h2 class="education-heading">Language</h2>
+              <ul>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

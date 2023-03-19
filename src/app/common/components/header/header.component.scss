@@ -39,6 +39,7 @@
 ion-toolbar {
   contain: none;
   --background: #00539c;
+  padding: 10px 0px !important;
 
   .toolbar-container {
     overflow: visible;
@@ -499,9 +500,9 @@ $menu_WIDTH: 150px;
   z-index: 99;
 }
 
-.hList {
-  //overflow: hidden;
-}
+// .hList {
+//   //overflow: hidden;
+// }
 
 .hList > * {
   float: left;
@@ -515,4 +516,9 @@ $menu_WIDTH: 150px;
   .hList {
     display: none !important;
   }
+}
+
+.logo-img {
+  margin: 8px 0px 0px 22px !important;
+  cursor: pointer;
 }

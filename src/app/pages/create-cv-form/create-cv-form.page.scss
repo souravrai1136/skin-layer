@@ -1,0 +1,323 @@
+* {
+  margin: 0px;
+}
+.create-cv-page {
+  margin: 24px;
+  display: flex;
+}
+.form-container {
+  background: white;
+  border-radius: 15px;
+  padding: 20px 10px 0px 20px !important;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+div#rightSection__ {
+  display: flex;
+  margin: 15px 20px 0px 20px;
+}
+.form-control {
+  background: #f2f3f7;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 8px !important;
+}
+.personal-form {
+  border: 1px solid #00539c82;
+  margin-bottom: 18px !important;
+  border-radius: 10px;
+}
+.form-control-textarea {
+  background: #f2f3f7;
+  border-radius: 10px;
+  padding-left: 8px !important;
+}
+.flex-heading {
+  padding: 0px 12px;
+}
+.header-heading {
+  display: flex;
+}
+.personal-txt {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00539c;
+}
+.header-heading {
+  //   margin: 0px 17px;
+  margin: 10px 17px 10px 17px;
+}
+.persoanl-details {
+  margin-bottom: 16px !important;
+}
+.down-arrow-icon {
+  font-size: 25px;
+  color: #00539c;
+  margin: auto 0px auto auto;
+  cursor: pointer;
+}
+hr.border-line {
+  height: 2px !important;
+  width: 96%;
+  color: red;
+  background: #c1c1c159;
+  margin: 10px auto;
+}
+
+.header-toolbar {
+  --background: #f1f4f7;
+  padding: 10px 10px 0px 0px;
+}
+
+.header-md::after {
+  background-image: none;
+}
+.circle {
+  margin-right: 8px;
+}
+.download-btn,
+.preview-btn {
+  background: #ffffff;
+  height: 50px;
+  --border-radius: 15px !important;
+  width: 10rem;
+  border-radius: 15px;
+  border: 0.5px solid rgb(0 83 156 / 47%);
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  font-size: 17px;
+  color: #00539c;
+  font-weight: bold;
+}
+.right-section {
+  // width: 35%;
+  background: #fff;
+  margin-left: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  height: 400px;
+}
+.save-btn {
+  --background: #f2f3f7;
+  height: 50px;
+  --border-radius: 15px !important;
+  width: 100%;
+  border-radius: 15px;
+  border: 0.5px solid rgba(0, 83, 156, 0.47);
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  font-size: 17px;
+  color: #00539c;
+  font-weight: bold;
+  --box-shadow: none;
+}
+.save-btn:hover {
+  --background: #00539c;
+  color: #fff;
+}
+.add-fields {
+  margin: 10px 20px 0px 20px !important;
+  position: relative;
+}
+.add-field-txt {
+  background: #f2f3f7;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 13px;
+  border: 0.5px solid rgba(0, 83, 156, 0.47);
+  color: #00539c;
+  cursor: pointer;
+}
+.add-icon {
+  margin-bottom: -2px;
+}
+
+// files uploaders style start here ------------
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  padding: 0px 12px !important;
+}
+.brochure-btn {
+  padding: 19px 15px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  width: 100%;
+}
+.file-icon {
+  margin-bottom: -6px;
+  margin-top: -14px;
+  margin-right: 7px;
+  font-size: 20px;
+}
+.file-upload-btn {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+// files uploaders style end here ------------
+
+.img-upload-col {
+  margin: auto auto 0px auto;
+}
+
+div#rightSection {
+  position: sticky !important;
+  top: 0;
+  z-index: 999;
+  margin-right: 5px;
+  top: 10px;
+  align-self: flex-start;
+}
+
+.save-btn {
+  margin: 0px 8px;
+}
+.data-card {
+  padding: 15px 15px;
+  border: 1px solid #c3c3c3;
+  /* margin: 13px 0px !important; */
+  border-radius: 8px;
+}
+
+.data-card-container {
+  margin: 0px 14px !important;
+}
+
+.form-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 5px;
+}
+
+// pdf stysle here --------------
+.pdf-sheet {
+  display: flex;
+}
+.bg-img {
+  // width: 210px;
+  height: 297px;
+  background: #f9b53a;
+  padding: 10px;
+  width: 59px;
+}
+
+.user-img {
+  margin-top: 30px;
+  border-radius: 81px;
+  width: 55px;
+  height: 39px;
+  object-fit: cover;
+  // background-size: cover;
+  border: 2px solid white;
+  margin: 8px 0px;
+  padding: 1px;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #484747;
+}
+.pdf-right {
+  margin-left: 12px;
+  width: 100%;
+  background: white;
+}
+
+.role-label {
+  font-size: 8px;
+  color: #6a6969;
+}
+.education {
+  margin-bottom: 8px;
+}
+.education-heading {
+  font-size: 10px;
+  font-weight: bold;
+}
+.university {
+  font-size: 5px;
+  color: #6a6969;
+  margin-bottom: -2px;
+}
+
+ul {
+  font-size: 12px;
+  padding: 0px 0px 0px 5px;
+  list-style: none;
+}
+.li-data {
+  font-size: 6px;
+  margin-bottom: -1px;
+  color: #6a6969;
+}
+
+.address-heading {
+  font-size: 7px;
+  font-weight: bold;
+  text-align: center;
+  // margin-bottom: 6px;
+}
+.address-txt {
+  font-size: 5px;
+}
+
+.address-con {
+  margin-bottom: 12px;
+}
+
+.add-btn {
+  --background: #0e9d0e;
+  margin: 0px 12px 10px 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .right-section {
+    display: none;
+  }
+  .create-cv-page {
+    display: block;
+  }
+  .form-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  div#rightSection__ {
+    justify-content: space-around;
+  }
+}
+
+.pdf-left {
+  width: 30%;
+}
+
+.pdf-sheet {
+  width: 210px;
+  height: 297px;
+  position: relative;
+}
+
+.pdf-right {
+  width: 70% !important;
+}
+
+
+.data-content {
+  margin-bottom: 4px;
+}
+

@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
   back() {}
 
-  menu_navigation(n: any) {
+  navigate(n: any) {
     if (n == '1') {
       this.config.navigate('home');
     }

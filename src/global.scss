@@ -27,7 +27,6 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 * {
   margin: 0px;
-  padding: 0px;
 }
 ion-content.md.content-ltr.hydrated {
   --background: #f1f4f7;
@@ -54,4 +53,8 @@ ion-content.ios.content-ltr.hydrated {
   line-height: 34px;
   color: #595959;
   margin-bottom: 7px;
+}
+
+ion-button {
+  --box-shadow: none;
 }

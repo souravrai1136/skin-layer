@@ -11,81 +11,36 @@
         </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <div class="back-container">
+    <!-- <div class="back-container">
       <ion-icon
         *ngIf="isDashboard"
         (click)="back()"
         class="back-icon"
         name="arrow-back-outline"
       ></ion-icon>
-    </div>
-    <!-- <ion-title>{{ isTitle }} </ion-title> -->
+    </div> -->
+    <!-- <ion-title (click)="navigate('1')">Resume Builder </ion-title> -->
+    <img (click)="navigate('1')" src="../../../../assets/img/logo.png" alt="" class="logo-img" />
 
     <div slot="end" class="slot-end">
-      <div class="fixed slot-end">
+      <!-- <div class="fixed slot-end">
         <img class="circle-1" src="../../../../assets/icon/search.svg" />
         <img
           class="circle-1"
-          (click)="menu_navigation('cart')"
+          (click)="navigate('cart')"
           src="../../../../assets/icon/cart.svg"
         />
         <img
           class="circle-1"
-          (click)="menu_navigation('notification')"
+          (click)="navigate('notification')"
           src="../../../../assets/icon/notification.svg"
         />
         <img
           class="circle-1"
-          (click)="menu_navigation('profile')"
+          (click)="navigate('profile')"
           src="../../../../assets/icon/user.svg"
         />
-      </div>
+      </div> -->
     </div>
   </ion-toolbar>
-
-  <div id="container">
-    <ul class="hList">
-      <li>
-        <a (click)="menu_navigation('1')" class="menu">
-          <p class="menu-title">Home</p>
-        </a>
-      </li>
-      <li>
-        <a class="menu">
-          <p class="menu-title menu-title_2th">Products</p>
-          <ul class="menu-dropdown">
-            <li
-              *ngFor="let item of product_list_menu"
-              (click)="menu_navigation(item.id)"
-            >
-              {{ item.title }}
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li>
-        <a class="menu">
-          <p class="menu-title menu-title_3th">Skin Collection</p>
-          <ul class="menu-dropdown">
-            <li
-              *ngFor="let item of skin_collection_menu"
-              (click)="menu_navigation(item.id)"
-            >
-              {{ item.title }}
-            </li>
-          </ul>
-        </a>
-      </li>
-      <li>
-        <a (click)="menu_navigation('4')" class="menu">
-          <p class="menu-title menu-title_4th">Custom Theme</p>
-        </a>
-      </li>
-      <li>
-        <a (click)="menu_navigation('5')" class="menu">
-          <p class="menu-title menu-title_5th">Contact US</p>
-        </a>
-      </li>
-    </ul>
-  </div>
 </ion-header>
