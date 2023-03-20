@@ -106,7 +106,10 @@ export class HomePage {
     );
     console.log('complated', this.completed_invoice_list);
 
-    if (this.completed_invoice_list == null || this.completed_invoice_list.length == 0) {
+    if (
+      this.completed_invoice_list == null ||
+      this.completed_invoice_list.length == 0
+    ) {
       this.invoice_heading = false;
     } else {
       this.invoice_heading = true;
@@ -205,5 +208,10 @@ export class HomePage {
       this.whatsapp_theme = false;
       this.email_theme = true;
     }
+  }
+
+  selectTemp(val) {
+    console.log(val);
+    this.config.navigate('create-cv-form');
   }
 }

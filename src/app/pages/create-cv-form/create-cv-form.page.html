@@ -1180,6 +1180,71 @@
 
     <!-- pdf preview ----------- -->
     <div class="right-section">
+      <!-- <div class="col-md-8" id="htmlData" #htmlData>
+        <div class="pdf-sheet">
+          <div class="pdf-left">
+            <div class="bg-img">
+              <img [src]="logo" alt="" class="user-img" />
+              <div class="personal-info" *ngIf="phone_number">
+                <div class="address-con">
+                  <h2 class="address-heading">Address</h2>
+                  <p class="address-txt">{{state}}, {{city}}, {{country}}</p>
+                </div>
+                <div class="address-con">
+                  <h2 class="address-heading">Contact</h2>
+                  <p class="address-txt">{{phone_number}}</p>
+                  <p class="address-txt">{{email}}</p>
+                </div>
+                <div class="address-con">
+                  <h2 class="address-heading">Professional Summary</h2>
+                  <p class="address-txt">{{professional_sum}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pdf-right">
+            <div class="bg-img-horitonal">
+              <p class="name">{{frist_name}} {{last_name}}</p>
+              <p class="role-label">{{want_job_title}}</p>
+            </div>
+            <div class="education" *ngIf="educationData.length !==0">
+              <h2 class="education-heading">Education</h2>
+              <div class="data-content" *ngFor="let item of educationData">
+                <p class="university">{{item.school_collage}}</p>
+                <p class="university">{{item.education_degree}}</p>
+                <p class="university">{{item.education_startEnd_date}}</p>
+              </div>
+            </div>
+            <div class="education" *ngIf="employementData.length !==0">
+              <h2 class="education-heading">Employment</h2>
+              <div class="data-content" *ngFor="let item of employementData ">
+                <p class="university">{{item.job_title}}</p>
+                <p class="university">{{item.employer}}</p>
+                <p class="university">{{item.start_end_date}}</p>
+              </div>
+            </div>
+            <div class="education" *ngIf="skillData.length !==0">
+              <h2 class="education-heading">Skill</h2>
+              <ul class="data-content">
+                <li class="li-data" *ngFor="let item of skillData ">
+                  {{item.label}}
+                </li>
+              </ul>
+            </div>
+            <div class="education">
+              <h2 class="education-heading">Language</h2>
+              <ul>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+                <li>HTML5</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
       <div class="col-md-8" id="htmlData" #htmlData>
         <div class="pdf-sheet">
           <div class="pdf-left">
@@ -1226,7 +1291,9 @@
             <div class="education" *ngIf="skillData.length !==0">
               <h2 class="education-heading">Skill</h2>
               <ul class="data-content">
-                <li class="li-data" *ngFor="let item of skillData ">{{item.label}}</li>
+                <li class="li-data" *ngFor="let item of skillData ">
+                  {{item.label}}
+                </li>
               </ul>
             </div>
             <!-- <div class="education">

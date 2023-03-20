@@ -90,7 +90,7 @@
       <h1 class="select-temp-txt">Select Template</h1>
       <div class="content-section">
         <div class="template" *ngFor="let item of templates_ let i = index">
-          <img [src]="item.img" class="template-img" />
+          <img [src]="item.img" class="template-img" (click)="selectTemp(item)"/>
           <div class="template-con">
             <p class="bill-name">{{item.bill_name}}</p>
             <p class="bill-date">Created on {{item.bill_create_date}} ago</p>

@@ -20,25 +20,16 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'notification',
-    loadChildren: () =>
-      import('./pages/notification/notification.module').then(
-        (m) => m.NotificationPageModule
-      ),
-  },
-  {
-    path: 'profile',
-    loadChildren: () =>
-      import('./pages/profile/profile.module').then((m) => m.ProfilePageModule),
-  },
-  {
     path: 'about',
     loadChildren: () =>
       import('./pages/about/about.module').then((m) => m.AboutPageModule),
   },
   {
     path: 'create-cv-form',
-    loadChildren: () => import('./pages/create-cv-form/create-cv-form.module').then( m => m.CreateCvFormPageModule)
+    loadChildren: () =>
+      import('./pages/create-cv-form/create-cv-form.module').then(
+        (m) => m.CreateCvFormPageModule
+      ),
   },
 ];
 
